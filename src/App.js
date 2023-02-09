@@ -1,23 +1,26 @@
-import logo from './logo.svg';
 import './App.css';
+import data from './data.json'
+import ActivityCard from './components/ActivityCard';
+import IdentityCard from './components/IdentityCard';
+import { useState } from 'react';
 
 function App() {
+
+  const [timeframe, setTimeframe] = useState('weekly')
+
+  const timeframeChangeHandler = (value)=>{
+    setTimeframe(value)
+  }
+
+  // const dataList = data.map(el => <ActivityCard key={el.id} title={el.title} time={el.timeframes.weekly} className={el.title.replace(' ', '')}/>)
+  const dataList = data.map(el => <ActivityCard key={el.id} activity={el} time={timeframe} className={el.title.replace(' ', '')}/>)
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <IdentityCard id='id' onTimeframeChange={timeframeChangeHandler}/>
+      <section id='activities'>
+        {dataList}
+      </section>
+      
     </div>
   );
 }

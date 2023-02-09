@@ -1,0 +1,48 @@
+.card{
+    border-radius: 15px;
+    color: aliceblue;
+    margin-bottom: 15px;
+    background-repeat: no-repeat;
+    background-position:top -5px right 10px ;
+}
+
+.header {
+    text-align: end;
+    height: 45px;
+}
+
+.infos {
+    background-color: hsl(235, 46%, 20%);
+    border-radius: 15px;
+    padding: 30px;
+}
+
+h2{
+    font-size: 18px;
+}
+
+.row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.hours {
+    font-size: 30px;
+    font-weight: 300;
+}
+
+@media screen and (min-width: 1440px){
+    .card{
+        margin: 0 15px 15px 15px;
+        min-width: calc(100% / 3 - 3 * 15px);
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+    .row:last-child{
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
