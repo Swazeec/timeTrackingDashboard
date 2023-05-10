@@ -12,7 +12,6 @@ function App() {
     setTimeframe(value)
   }
 
-  // const dataList = data.map(el => <ActivityCard key={el.id} title={el.title} time={el.timeframes.weekly} className={el.title.replace(' ', '')}/>)
   const dataList = data.map(el => <ActivityCard key={el.id} activity={el} time={timeframe} className={el.title.replace(' ', '')}/>)
   return (
     <div className="App">
